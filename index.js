@@ -13,7 +13,12 @@
   limitations under the License.
 */
 
-const addon = require('bindings')('grandiose');
+const path = require('path');
+
+const addon = require('bindings')({
+  bindings: 'grandiose',
+  module_root: path.resolve(__dirname)
+});
 
 try {
   const SegfaultHandler = require('segfault-handler');
